@@ -1,0 +1,21 @@
+<div>Chose competitors:</div>
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary {{if this.isPerson "" "active"}}">
+    <input type="radio" name="options" id="starships" autocomplete="off" {{action "toggleType" false}}> Starships
+  </label>
+  <label class="btn btn-secondary {{if this.isPerson "active" ""}}">
+    <input type="radio" name="options" id="persons" autocomplete="off" {{action "toggleType" true}}> Persons
+  </label>
+</div>
+
+<div class="card-deck align-items-center justify-content-center m-2">
+  <div class="card-deck align-items-center justify-content-center m-2">
+    <Card @cardData={{this.cardOneData}} @type={{this.isPerson}} />
+    <span>VS</span>
+    <Card @cardData={{this.cardTwoData}} @type={{this.isPerson}} />
+  </div>
+</div>
+
+<button class="btn btn-primary" {{action "getCards" this.isPerson}}>Play</button>
+
+{{yield}}

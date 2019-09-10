@@ -6,8 +6,9 @@ export default DS.RESTSerializer.extend({
       starships: {
         id,
         name: payload.name,
-        created: payload.created,
-        crew: payload.crew === 'unknown' ? 0 : payload.crew,
+        manufacturer: payload.manufacturer,
+        model: payload.model,
+        crew: payload.crew === 'unknown' ? 0 : payload.crew
       }
     };
 

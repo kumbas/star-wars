@@ -6,7 +6,8 @@ export default DS.RESTSerializer.extend({
       people: {
         id,
         name: payload.name,
-        created: payload.created,
+        gender: payload.gender,
+        height: payload.height,
         mass: payload.mass === 'unknown' ? 0 : payload.mass,
       }
     };

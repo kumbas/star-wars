@@ -1,14 +1,6 @@
 import DS from 'ember-data';
 
-export default DS.JSONAPIAdapter.extend({
-  namespace: 'api',
+export default DS.RESTAdapter.extend({
   host: 'https://swapi.co',
-  init() {
-    this._super(...arguments);
-
-    this.set('headers', {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    });
-  }
+  namespace: '/api'
 });

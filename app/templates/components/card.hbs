@@ -1,0 +1,26 @@
+<div class="card m-2">
+  <h5 class="card-title mt-3">
+    {{#if @cardData.name}}{{@cardData.name}}{{else}}Press Play button{{/if}}
+    {{#if cardData.isWinner}}<span class="badge badge-danger">Winner</span>{{/if}}
+  </h5>
+  <ul class="list-group list-group-flush text-left">
+    {{#if cardData.mass}}
+      <li class="list-group-item">Mass: {{cardData.mass}}</li>
+    {{/if}}
+    {{#if cardData.gender}}
+      <li class="list-group-item">Gender: {{cardData.gender}}</li>
+    {{/if}}
+    {{#if cardData.height}}
+      <li class="list-group-item">Height: {{cardData.height}}</li>
+    {{/if}}
+    {{#if cardData.model}}
+      <li class="list-group-item">Model: {{cardData.model}}</li>
+    {{/if}}
+    {{#if cardData.manufacturer}}
+      <li class="list-group-item">Manufacturer: {{cardData.manufacturer}}</li>
+    {{/if}}
+    {{#if cardData.crew}}
+      <li class="list-group-item">Crew: {{cardData.crew}}</li>
+    {{/if}}
+  </ul>
+</div>
