@@ -18,4 +18,6 @@
 
 <button class="btn btn-primary" {{action "getCards" this.isPerson}}>Play</button>
 
+{{#if this.isLoading}}<div class="mt-2">Loading...</div>{{/if}}
+
 {{yield}}
