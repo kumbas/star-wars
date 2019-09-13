@@ -7,16 +7,19 @@ module('Acceptance | star wars', function(hooks) {
 
   test('should show heading home page', async function (assert) {
     await visit('/');
+
     assert.equal(this.element.querySelectorAll('h1').length, 1, 'should display heading');
   });
 
   test('should show 2 cards', async function (assert) {
     await visit('/');
+
     assert.equal(this.element.querySelectorAll('.card').length, 2, 'should display 2 cards');
   });
 
   test('should show play button', async function (assert) {
     await visit('/');
+
     assert.equal(this.element.querySelectorAll('.play-button').length, 1, 'should display play button');
   });
 
@@ -25,6 +28,7 @@ module('Acceptance | star wars', function(hooks) {
     await visit('/');
     click('.play-button');
     await waitFor(LoadingSelector, 200);
+
     assert.equal(this.element.querySelectorAll(LoadingSelector).length, 1, 'should display play button');
   });
 });
