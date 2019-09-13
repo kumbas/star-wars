@@ -16,8 +16,8 @@
   </div>
 </div>
 
-<button class="btn btn-primary" {{action "getCards" this.isPerson}}>Play</button>
+<button class="play-button btn btn-primary" {{action "getCards" this.isPerson}}>Play</button>
 
-{{#if this.isLoading}}<div class="mt-2">Loading...</div>{{/if}}
+{{#if this.isLoading}}<div class="loading mt-2">Loading...</div>{{/if}}
 
 {{yield}}

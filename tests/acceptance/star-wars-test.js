@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { visit } from '@ember/test-helpers';
+import { visit, click, waitFor } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 
 module('Acceptance | star wars', function(hooks) {
@@ -17,6 +17,14 @@ module('Acceptance | star wars', function(hooks) {
 
   test('should show play button', async function (assert) {
     await visit('/');
-    assert.equal(this.element.querySelectorAll('.btn-primary').length, 1, 'should display play button');
+    assert.equal(this.element.querySelectorAll('.play-button').length, 1, 'should display play button');
+  });
+
+  test('should show loading state', async function(assert) {
+    const LoadingSelector = '.loading';
+    await visit('/');
+    click('.play-button');
+    await waitFor(LoadingSelector, 200);
+    assert.equal(this.element.querySelectorAll(LoadingSelector).length, 1, 'should display play button');
   });
 });
