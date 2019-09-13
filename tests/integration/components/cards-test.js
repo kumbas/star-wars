@@ -6,7 +6,7 @@ import hbs from 'htmlbars-inline-precompile';
 module('Integration | Component | cards', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders 2 cards', async function(assert) {
+  test('should renders 2 cards', async function(assert) {
     await render(hbs`<Cards />`);
 
     assert.equal(this.element.querySelectorAll('.card').length, 2, 'should display 2 cards');
