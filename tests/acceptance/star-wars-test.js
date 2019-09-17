@@ -24,11 +24,12 @@ module('Acceptance | star wars', function(hooks) {
   });
 
   test('should show loading state', async function(assert) {
-    const LoadingSelector = '.loading';
+    const loadingSelector = '.loading';
+    const loadingBlockWaitTime = 200;
     await visit('/');
     click('.play-button');
-    await waitFor(LoadingSelector, 200);
+    await waitFor(loadingSelector, loadingBlockWaitTime);
 
-    assert.equal(this.element.querySelectorAll(LoadingSelector).length, 1, 'should display play button');
+    assert.equal(this.element.querySelectorAll(loadingSelector).length, 1, 'should loading block');
   });
 });
